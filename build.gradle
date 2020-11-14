@@ -2,6 +2,7 @@ plugins {
   id 'java-gradle-plugin'
   id 'com.gradle.plugin-publish' version '0.12.0'
   id 'groovy'
+  id "com.diffplug.spotless" version "5.8.1"
 }
 
 sourceCompatibility = '1.8'
@@ -45,3 +46,14 @@ pluginBundle {
 }
 
 validatePlugins.failOnWarning = false
+
+spotless {
+  groovy {
+    importOrder()
+    greclipse()
+    licenseHeaderFile 'src/etc/header.txt'
+  }
+  groovyGradle {
+    greclipse()
+  }
+}
