@@ -70,7 +70,7 @@ class GatlingRunTask extends DefaultTask implements JvmConfigurable {
 
                 exec.standardInput = System.in
 
-                exec.ignoreExitValue = true
+                // exec.ignoreExitValue = true
             } as Action<JavaExecSpec>)]
         }
 
